@@ -13,7 +13,6 @@ const Timer = ({videoRef}) => {
     }
 
     useEffect(() => {
-        if (videoRef.current) {
             const durationTotal = videoRef.current.duration || 0
             const durationTime = TimeConverter(durationTotal)
             setDuration(durationTime)
@@ -24,8 +23,6 @@ const Timer = ({videoRef}) => {
             }
 
             videoRef.current.addEventListener('timeupdate', handleTimeUpdate)
-
-        }
     }, [videoRef.current])
 
     return(
